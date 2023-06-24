@@ -1,0 +1,15 @@
+Username:chowesleymungo
+password:EyWrN2shVR3RibtD
+
+
+
+
+
+
+mongodb+srv://chowesleymungo:<EyWrN2shVR3RibtD>@reactbackend.ttzdkeh.mongodb.net/
+mongodb+srv://chowesleymungo:EyWrN2shVR3RibtD@reactbackend.ttzdkeh.mongodb.net/
+
+
+mongodb+srv://chowesleymungo:<EyWrN2shVR3RibtD>@reactbackend.ttzdkeh.mongodb.net/?retryWrites=true&w=majority
+
+mongodb+srv://tambongslade17:ctWTcv9ByZY744Qp@react-backend-portfolio.ksdmpgc.mongodb.net/
