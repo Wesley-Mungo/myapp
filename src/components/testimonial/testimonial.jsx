@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./testimonial.css";
 import IMG from "../../asset/OIP.jpg";
 import AV1 from "../../asset/3eac4af26c6a0b95eadbcfaaed1165e9.jpg";
@@ -19,50 +19,16 @@ import 'swiper/css/pagination';
 
 
 export const Testimonial = () => {
-  const testimonials = [
-    {
-      id: 1,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: IMG,
-      Cname: "Client 1",
-    },
-    {
-      id: 2,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV1,
-      Cname: "Client 2",
-    },
-    {
-      id: 3,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV2,
-      Cname: "Client 3",
-    },
-    {
-      id: 4,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV3,
-      Cname: "Client 4",
-    },
-    {
-      id: 5,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV5,
-      Cname: "Client 5",
-    },
-    {
-      id: 6,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV4,
-      Cname: "Client 6",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  useEffect(() =>{
+    fetch('https://localhost:8000/api/testimonial')
+    .then(response => response.json())
+     .then(data => setData(data))
+      .catch(error => console.error(error));
+  
+  }, []
+  );
   return (
     <section id="testimonial">
       <h5>Review from client</h5>
